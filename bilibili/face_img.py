@@ -22,8 +22,8 @@ def get_face_img_and_save_file():
     search_url = 'https://search.bilibili.com/all?keyword=' + str(_number)
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 \
-                      (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/73.0.3683.103 "
+                      "Safari/537.36 "
     }
     # 获取html文件
     response = requests.get(search_url, headers=headers)

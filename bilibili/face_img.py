@@ -36,8 +36,9 @@ def get_face_img_and_save_file():
     img_uri = page_text[a + 7:b + 3].encode("utf-8").decode("unicode_escape")
     image_url = "https:" + str(img_uri)
 
-    # 保存图片到E盘的文件夹中
-    os.mkdir("b站图片")
+    # 封面保存位置
+    if not os.path.exists('b站图片'):
+        os.mkdir('b站图片')
     os.chdir("b站图片")
 
     with open(str(number) + '  ' + str(time.time()) + '.jpg', 'wb') as f:

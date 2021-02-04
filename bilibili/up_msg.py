@@ -3,7 +3,10 @@ import os
 import time
 
 import requests
-
+"""
+对up注信息的拉取，然后储存头像
+up猪的范围 和 头像的储存位置 依赖于get_up_msg_conf.json文件
+"""
 # 从文件读取配置信息
 with open("get_up_msg_conf.json", "r") as f:
     conf_map = json.load(f)

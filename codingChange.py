@@ -5,12 +5,12 @@ import base64
 '''
 
 
-# 对字符串用base64加密
+# base64加密
 def base64_encode(s):
     _s = s.encode("utf-8")
     return base64.b64encode(_s).decode("utf-8")
 
 
-# 字符串用base64解密
+# base64解密
 def base64_decode(s):
     return base64.b64decode(s).decode("utf-8")

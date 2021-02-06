@@ -11,7 +11,16 @@ xor = 177451812
 add = 8728348608
 
 
-def bv_to_av(x):
+def get_av_or_bv(number) -> list[str]:
+    if number.startswith("av") | number.startswith("AV"):
+        return [av_to_bv(number)[2:], number]
+    elif number.startswith("bv") & number.startswith("BV"):
+        return [bv_to_av(number)[2:], number]
+    else:
+        print('输入信息不正确')
+
+
+def bv_to_av(x) -> str:
     """
     :param x: bv号str
     :return: av号str
@@ -24,7 +33,7 @@ def bv_to_av(x):
     return 'AV' + str((r - add) ^ xor)
 
 
-def av_to_bv(x):
+def av_to_bv(x) -> str:
     """
     :param x: av号str
     :return: bv号str

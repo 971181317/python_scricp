@@ -18,7 +18,7 @@ with open("../conf/scricp_bilibili_conf.json", "r") as f:
 left_mid = conf_map["left_mid"]
 right_mid = conf_map["right_mid"]
 # 文件保存地址
-save_path = conf_map["save_path"] + '\\up_all_video_msg\\' + str(left_mid) + '~' + str(right_mid) \
+save_path = os.getcwd() + '/..' + conf_map["save_path"] + '/up_all_video_msg/' + str(left_mid) + '~' + str(right_mid) \
             + '_time：' + str(int(time.time()))
 
 # 创建文件夹
@@ -43,7 +43,7 @@ param = {
 }
 
 
-def get_up_all_video_msg(_mid):
+def get_and_save(_mid):
     param['mid'] = _mid
     param['pn'] = 1
     # 获取基础数据
@@ -88,9 +88,9 @@ def get_up_all_video_msg(_mid):
         param['pn'] += 1
     print('end', _mid)
     # 保存表格
-    wb.save(save_path + '\\mid：%d，count：%d.xlsx' % (_mid, video_count))
+    wb.save(save_path + '/mid：%d，count：%d.xlsx' % (_mid, video_count))
 
 
 # 运行
 for i in range(left_mid, right_mid + 1):
-    get_up_all_video_msg(i)
+    get_and_save(i)

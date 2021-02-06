@@ -17,13 +17,13 @@ with open("../conf/scricp_bilibili_conf.json", "r") as f:
 left_mid = conf_map["left_mid"]
 right_mid = conf_map["right_mid"]
 # 文件保存地址
-save_path = conf_map["save_path"] + '\\up_msg\\' + str(left_mid) + '~' + str(right_mid) \
+save_path = os.getcwd() + '/..' + conf_map["save_path"] + '/up_msg/' + str(left_mid) + '~' + str(right_mid) \
             + '_time：' + str(int(time.time()))
-save_face_img_path = save_path + '\\img'
+save_face_img_path = save_path + '/img'
 
 # 创建文件夹
 if not os.path.exists(save_path):
-    os.mkdir(save_path)
+    os.makedirs(save_path)
 if not os.path.exists(save_face_img_path):
     os.mkdir(save_face_img_path)
 
@@ -53,7 +53,7 @@ def get_msg_and_save_file(_mid):
     os.chdir(save_face_img_path)
     with open('' + str(_mid) + '.jpg', 'wb') as f:
         f.write(requests.get(up_msg['data']['face']).content)
-    print(i)
+    # print(i)
 
 
 # 运行

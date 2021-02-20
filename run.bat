@@ -1,12 +1,12 @@
+rem 窗口大小
+mode con cols=130 lines=40
+rem 应用名称
+title 小脚本   作者：淺い空  qq：971181317 wx：dxy090909
 @echo off
 rem 之后命令都不显示命令行
 
 rem 将cmd编码转为utf-8
 @chcp 65001
-rem 应用名称
-title 小脚本   作者：淺い空  qq：971181317 wx：dxy090909
-rem 窗口大小
-mode con cols=130 lines=40
 cls
 echo 欢迎使用本脚本，制作者：淺い空
 echo.

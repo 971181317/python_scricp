@@ -22,7 +22,7 @@ function toDark() {
     if (url.startsWith("https://www.bilibili.com/video/")) {
         //播放页面
         console.log("视频播放页面dark")
-    } else if ("https://www.bilibili.com/" == url) {
+    } else if (url.startsWith("https://www.bilibili.com/")) {
         console.log("主页dark")
         totalFontColor()
         mainHeaderDark()
@@ -31,11 +31,12 @@ function toDark() {
     } else if (url.startsWith("https://t.bilibili.com")) {
         console.log("动态页dark")
         totalFontColor()
-        dynamicHeader()
+        dynamicAndUserHeader()
         dynamicBody()
     } else if (url.startsWith("https://space.bilibili.com")) {
         console.log("用户页面")
         totalFontColor()
+        dynamicAndUserHeader()
     } else {
         console.log("其他页面暂时没做,请联系作者，qq：9711813137，邮箱：971181317@qq.com")
     }
@@ -121,9 +122,20 @@ function mainHeaderDark() {
     $(".tab-bar").css("background", "#2d2d2d")
 
     $(".title").css("color", "#ffffff")
-    $(".im-list-box")
-        .css("background", "#2d2d2d")
-        .css("color", "#ffffff")
+    $(".video-list").css("background", "#2d2d2d")
+    $(".live-list").css("background", "#2d2d2d")
+    $(".article-list").css("background", "#2d2d2d")
+    $(".tip-box.no-more-tip").css("background", "#2d2d2d")
+    $(".history-tip").css("background", "#2d2d2d")
+    $(".list-item")
+        .mousemove(function () {
+            $(this).css("background", "rgb(2,157,208)")
+                .children(".main-container").children(".center-box").children("a")
+                .css("background", "rgb(2,157,208)")
+        })
+        .mouseleave(function () {
+            $(this).css("background", "#2d2d2d")
+        })
     //banner下方主页内容
     $(".primary-menu-itnl li span").css("color", "#ffffff")
     $(".primary-menu-itnl li").css("border", "1px solid #1c1c1c")
@@ -141,9 +153,26 @@ function mainHeaderDark() {
     $(".contact-help")
         .css("background", "#1c1c1c")
         .css("color", "#2d2d2d")
+    //个人信息
+    $(".link-title").css("color", "#ffffff")
+    $(".link-item")
+        .mousemove(itemSelect)
+        .mouseleave(itemNotSelect)
+    $(".contact-tips.email-tips").css("background", "#000000")
+    $(".contact-tips.phone-tips").css("background", "#000000")
+    $(".level-intro").css("background", "#3c3c3c")
+    $(".level-intro__content").css("color", "#ffffff")
+    $(".history-item a").css("color", "#000000")
+    $("input .nav-search-keyword").css("color", "#000000")
+    $(".channel-menu-mini").css("background", "#3d3d3d")
+    //消息按钮
+    $("div.im-list-box")
+        .css("background", "#2d2d2d")
+        .children("a")
+        .css("color", "#ffffff")
 }
 
-function dynamicHeader() {
+function dynamicAndUserHeader() {
     //todo
     $(".fixed-bg").css("background", "#1c1c1c")
     $(".home-content").css("background", "#1c1c1c")
@@ -181,7 +210,22 @@ function dynamicBody() {
         .css("background", "#2d2d2d")
         .css("color", "#ffffff")
     //动态卡片
-    $(".card").css("background", "#2d2d2d")
+    $(".card")
+        .css("background", "#2d2d2d")
+    $(".card dir").css("background", "#2d2d2d")
     $(".live-container").css("background", "#2d2d2d")
-    $(".video-wrap").css("background", "2d2d2d")
+    $(".video-wrap").css("background", "#2d2d2d")
+    $(".post-content.repost").css("background", "#3d3d3d")
+    $(".post-content.repost .content").css("background", "#3d3d3d")
+    $(".post-content.repost .video-wrap").css("background", "#3d3d3d")
+    $(".post-content.repost .video-wrap .text-area").css("background", "#3d3d3d")
+    $(".shop-list").css("background", "#2d2d2d")
+    $(".article-container").css("background", "#2d2d2d")
+    $(".post-content.repost .text-area").css("background", "#3d3d3d")
+    $(".music-container.bg-white.pointer.t-left")
+        .css("background", "#2d2d2d")
+        .css("color", "#ffffff")
+    $(".text-content.ff-yahei.tc-black.fs-14.ls-0.line-clamp-1").css("color", "#ffffff")
+    //有新动态
+    $("p .message").css("color", "#9b7652")
 }

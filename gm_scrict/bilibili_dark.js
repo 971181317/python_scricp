@@ -178,4 +178,10 @@ function dynamicBody() {
     $(".title.tc-black").css("color", "#ffffff")
     //动态上方头像
     $(".most-viewed-panel")
+        .css("background", "#2d2d2d")
+        .css("color", "#ffffff")
+    //动态卡片
+    $(".card").css("background", "#2d2d2d")
+    $(".live-container").css("background", "#2d2d2d")
+    $(".video-wrap").css("background", "2d2d2d")
 }

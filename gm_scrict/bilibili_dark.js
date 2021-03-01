@@ -37,6 +37,7 @@ function toDark() {
         console.log("用户页面")
         totalFontColor()
         dynamicAndUserHeader()
+        userBody()
     } else {
         console.log("其他页面暂时没做,请联系作者，qq：9711813137，邮箱：971181317@qq.com")
     }
@@ -225,7 +226,77 @@ function dynamicBody() {
     $(".music-container.bg-white.pointer.t-left")
         .css("background", "#2d2d2d")
         .css("color", "#ffffff")
+    //番剧
+    $(".bangumi-container.can-hover").css("background", "#2d2d2d")
     $(".text-content.ff-yahei.tc-black.fs-14.ls-0.line-clamp-1").css("color", "#ffffff")
     //有新动态
     $("p .message").css("color", "#9b7652")
+}
+
+function userBody() {
+    $("html").css("background", "#1c1c1c")
+    $("#app").css("background", "#1c1c1c")
+    //header
+    $(".h").css("background", "#1c1c1c")
+    //search
+    $("#navigator").css("background", "#1c1c1c").css("box-shadow", "0 0 0 1px #2d2d2d")
+    $(".n-inner.clearfix").css("background", "#2d2d2d").css("box-shadow", "0 0 0 1px #2d2d2d")
+    $(".wrapper").css("border-color", "#1c1c1c")
+    $("h3").css("color", "#ffffff")
+    $("span.count").css("color", "rgb(2,157,208)")
+    //body
+    $(".s-space").css("background", "#1c1c1c")
+    $(".col-1").css("background", "#2d2d2d")
+        .css("border", "1px solid #1c1c1c")
+    $(".col-2").children()
+        .css("background", "#2d2d2d")
+        .css("border-color", "#1c1c1c")
+    $(".row.user-auth.no-auth").css("background", "#2d2d2d")
+    $(".section")
+        .css("background", "#2d2d2d")
+        .css("border-color", "#1c1c1c")
+    $("textarea.be-textarea_inner")
+        .css("background", "#2d2d2d")
+        .css("border-color", "#ffffff")
+    //动态卡片
+    $(".card")
+        .css("background", "#2d2d2d")
+        .css("border-color", "#2d2d2d")
+    $(".card dir").css("background", "#2d2d2d")
+    $(".live-container").css("background", "#2d2d2d")
+    $(".video-wrap").css("background", "#2d2d2d")
+    $(".post-content.repost").css("background", "#3d3d3d")
+    $(".post-content.repost .content").css("background", "#3d3d3d")
+    $(".post-content.repost .video-wrap").css("background", "#3d3d3d")
+    $(".post-content.repost .video-wrap .text-area").css("background", "#3d3d3d")
+    $(".shop-list").css("background", "#2d2d2d")
+    $(".article-container").css("background", "#2d2d2d")
+    $(".post-content.repost .text-area").css("background", "#3d3d3d")
+    $(".music-container.bg-white.pointer.t-left")
+        .css("background", "#2d2d2d")
+        .css("color", "#ffffff")
+    //番剧
+    $(".bangumi-container.can-hover").css("background", "#2d2d2d")
+    $(".text-content.ff-yahei.tc-black.fs-14.ls-0.line-clamp-1").css("color", "#ffffff")
+    //投稿
+    $(".col-full.clearfix").css("background", "#2d2d2d").css("box-shadow", "0 0 0 1px #2d2d2d")
+    $(".contribution-sidenav").css("border-color", "#2d2d2d")
+    $(".main-content").css("border-color", "#2d2d2d")
+    $("#submit-video-type-filter").css("background", "#3c3c3c")
+    //频道
+    $(".col-full").css("background", "#2d2d2d").css("box-shadow", "0 0 0 1px #2d2d2d").css("border-color", "#2d2d2d")
+    $(".channel-option.no-channel").css("background", "#2d2d2d")
+    //收藏
+    $(".small-item").css("border-color", "#2d2d2d")
+    $(".be-pager li").css("background", "#2d2d2d")
+    //订阅
+    $(".pgc-item-title").css("color", "#ffffff")
+    $(".pgc-item-desc").css("color", "#ffffff")
+    $(".bangumi-pagelistbox.clearfix a").css("background", "#2d2d2d")
+    //设置
+    $("#setting-new-tag-btn").css("background", "#2d2d2d")
+    $(".setting-tag-list a").css("background", "#2d2d2d")
+    $("input#setting-new-tag").css("background", "#2d2d2d").css("color", "#ffffff")
+    //充电
+    $(".elec-status-bg-grey").css("background", "#2d2d2d")
 }
